@@ -127,10 +127,16 @@ void MonoCamera::updateCameraInfo(const avt_vimba_camera::AvtVimbaCameraConfig& 
   int binning_or_decimation_y = std::max(config.binning_y, config.decimation_y);
 
   // Set the operational parameters in CameraInfo (binning, ROI)
-  ci.height    = config.height; 
-  ci.width     = config.width;
-  ci.binning_x = binning_or_decimation_x;
-  ci.binning_y = binning_or_decimation_y;
+  //ci.height    = config.height; 
+  //ci.width     = config.width;
+  //ci.binning_x = binning_or_decimation_x;
+  //ci.binning_y = binning_or_decimation_y;
+
+
+  ci.height    = 600; 
+  ci.width     = 800;
+  ci.binning_x = 1;
+  ci.binning_y = 1;
 
   // ROI in CameraInfo is in unbinned coordinates, need to scale up
   ci.roi.x_offset = config.roi_offset_x;
